@@ -118,13 +118,13 @@ public class Load {
 			block.setImg(images.getImage(BlockType.FLOOR, View.FRONT),View.LEFT);
 			block.setImg(images.getImage(BlockType.FLOOR, View.FRONT),View.RIGHT);
 			block.setImg(images.getImage(BlockType.FLOOR, View.FRONT),View.TOP);
-			
+			block.setType(BlockType.FLOOR);
 		}else if(d == 2){
 			block.setImg(images.getImage(BlockType.DEFAULT, View.FRONT),View.FRONT);
 			block.setImg(images.getImage(BlockType.DEFAULT, View.LEFT),View.LEFT);
 			block.setImg(images.getImage(BlockType.DEFAULT, View.RIGHT),View.RIGHT);
 			block.setImg(images.getImage(BlockType.DEFAULT, View.TOP),View.TOP);
-			
+			block.setType(BlockType.DEFAULT);
 			ArrayList<Face> f = faces.getFaces(BlockType.DEFAULT);
 			if(f == null){
 				System.out.println("Faces returned null. Failed to load block");

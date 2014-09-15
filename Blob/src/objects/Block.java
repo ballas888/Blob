@@ -3,6 +3,7 @@ package objects;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import types.BlockType;
 import types.View;
 
 public class Block {
@@ -10,7 +11,7 @@ public class Block {
 	private BufferedImage leftImg;
 	private BufferedImage topImg;
 	private BufferedImage rightImg;
-	
+	private BlockType type;
 	private ArrayList<Face> faces = new ArrayList<Face>();
 	
 	private int blockX = 0;
@@ -64,6 +65,14 @@ public class Block {
 
 	public void setBlockY(int blockY) {
 		BlockY = blockY;
+	}
+
+	public BlockType getType() {
+		return type;
+	}
+
+	public void setType(BlockType type) {
+		this.type = type;
 	}
 	
 }
