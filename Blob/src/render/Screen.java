@@ -280,6 +280,9 @@ public class Screen extends Canvas{
 							//g.drawRect(X,Y, w, h);
 							tile.getBlock().setBlockX(X);
 							tile.getBlock().setBlockY(Y);
+//							if(y =  ){
+//								
+//							}
 							renderShadows(g, tile.getBlock(), data);
 							g.drawImage(img,X,Y,null);
 						}
