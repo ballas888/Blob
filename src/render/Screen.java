@@ -41,6 +41,7 @@ public class Screen extends Canvas{
 
 		renderBlocks(g, data);
 		renderBlocks2(g, data);
+
 		//renderfaces(g, data);
 		//renderShadows(g, data);
 		bs.show();		
@@ -52,7 +53,8 @@ public class Screen extends Canvas{
 		int w = data.getBlockW();
 		int h = data.getBlockH();
 		
-		Point lightP = data.getMousePos();	
+		Point lightP = data.getMousePos();
+
 		
 		g.setColor(new Color(50,50,50));
 		for(int y = 0; y< tiles.length;y++){
@@ -96,8 +98,9 @@ public class Screen extends Canvas{
 						xs[i] = pnts.get(i).x;//+ofX;
 					}
 					for(int i = 0; i< ys.length;i++){
-						ys[i] = pnts.get(i).y;//+ofY;
+						ys[i] = pnts.get(i).y;
 					}
+
 					g.fillPolygon(xs, ys, xs.length);
 //					int fx = face.getXArray().get(1)+ofX;
 //					int fy = face.getYArray().get(1)+ofY;
@@ -283,6 +286,7 @@ public class Screen extends Canvas{
 //							if(y =  ){
 //								
 //							}
+
 							renderShadows(g, tile.getBlock(), data);
 							g.drawImage(img,X,Y,null);
 						}
@@ -356,8 +360,8 @@ public class Screen extends Canvas{
 			for(int i = 0; i < face.getXArray().size()-1;i++){
 				int fx = face.getXArray().get(i)+ofX;
 				int fy = face.getYArray().get(i)+ofY;
-				int xdist = fx - lightP.x;
-				int ydist = fy - lightP.y;
+				int xdist = (fx - lightP.x)*20;
+				int ydist = (fy - lightP.y)*20;
 				
 				pnts.add(new Point(fx,fy));
 				pnts.add(new Point(fx+xdist, fy+ydist));
@@ -365,8 +369,8 @@ public class Screen extends Canvas{
 				int ffx = face.getXArray().get(i+1)+ofX;
 				int ffy = face.getYArray().get(i+1)+ofY;
 				
-				int xdist2 = ffx - lightP.x;
-				int ydist2 = ffy - lightP.y;
+				int xdist2 = (ffx - lightP.x)*20;
+				int ydist2 = (ffy - lightP.y)*20;
 				
 				pnts.add(new Point(fx+xdist, fy+ydist));
 				pnts.add(new Point(ffx+xdist2,ffy+ydist2));

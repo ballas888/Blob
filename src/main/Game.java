@@ -34,7 +34,6 @@ public class Game implements Runnable {
 		mainFrame.setTitle(title);
 
 		data = new Data();
-		data = new Data();
 		data.setView(View.FRONT);
 		data.setTiles(load.loadMap("small", data));
 		System.out.println(data.getBlockW() + " : " + data.getBlockH());
